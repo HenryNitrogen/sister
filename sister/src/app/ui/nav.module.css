@@ -12,10 +12,13 @@
   
   .logoContainer {
     align-content: center;
-    margin: 10px;
+    margin: 6px;
     width: 140px;
   }
-  
+  .list {
+    align-content: center;
+    margin: 14px;
+  }
   .logoImage {
     width: 100%;
     border-radius: 10px;
