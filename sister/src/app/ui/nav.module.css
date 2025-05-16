@@ -2,24 +2,39 @@
     position: fixed;
     display: flex;
     top: 20px;
+    flex-direction: row;
     right: 20px;
     left: 20px;
     height: 60px;
     border-radius: 10px;
     background-color: orange;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    align-items: center;
   }
   
   .logoContainer {
-    align-content: center;
     margin: 6px;
+    min-width: 140px;
     width: 140px;
+    
   }
   .list {
-    align-content: center;
     margin: 14px;
   }
   .logoImage {
     width: 100%;
     border-radius: 10px;
+  }
+  .search{
+    margin: 30px;
+    flex: 1;
+    max-width: 300px;
+    min-width: 60px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 60%;
+    padding-left: 10px;
+    color: black;
+    font-weight: 600;
+    background-color: red;
   }

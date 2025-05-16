@@ -9,8 +9,12 @@ export default function Nav() {
           <div className={styles.logoContainer}>
             <img src="/logo.png" alt="Logo" className={styles.logoImage} />
           </div>
+    
+            <input className={styles.search} type="text" />
+
           
         </nav>
+        
     
 
   );
