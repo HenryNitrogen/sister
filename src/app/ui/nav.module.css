@@ -37,4 +37,44 @@
     color: black;
     font-weight: 600;
     background-color: red;
+    
+  }
+  .homelist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .divhomelist{
+    position: inherit;
+    right: 40px;
+  }
+  .ali{
+    margin-left: 10px;
+  }
+  .alia{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  @media (max-width: 720px) {
+    .homelist {
+      display: none;
+    }
+    .list {
+      display: block;
+    }
+    .divhomelist{
+      display: none;
+    }
+  }
+  @media (min-width: 719px) {
+    .homelist {
+      display: flex;
+    }
+    .divhomelist{
+      display: flex;
+    }
+    .list {
+      display: none;
+    }
+
   }
