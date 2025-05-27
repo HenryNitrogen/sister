@@ -13,20 +13,24 @@
   }
   
   .logoContainer {
+    margin-left: 20px;
     margin: 6px;
     min-width: 140px;
     width: 140px;
-    display: none;
+
     
   }
   .list {
     margin: 14px;
   }
   .logoImage {
+    margin-left: 15px;
     width: 100%;
     border-radius: 10px;
+    display: none;
   }
   .search{
+    
     margin: 30px;
     flex: 1;
     max-width: 300px;
