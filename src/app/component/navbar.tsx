@@ -2,6 +2,7 @@ import styles from '../ui/nav.module.css';
 import ReorderIcon from '@mui/icons-material/Reorder';
 export default function Nav() {
   return (
+    <>
         <nav className={styles.nav}>
           <div className={styles.list}> 
             <button className={styles.iconbutton}><ReorderIcon /></button>
@@ -21,7 +22,8 @@ export default function Nav() {
 
           
         </nav>
-        
+
+        </>
     
 
   );

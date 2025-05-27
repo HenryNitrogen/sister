@@ -1,0 +1,69 @@
+/* videos.module.css */
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    padding: 20px; 
+    gap: 20px;
+  }
+  
+  .cards {
+    width: 400px;
+    height: 300px;
+    margin-top: 50px;
+    background-color: #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .v{
+    margin-top: 20px;
+    height: 300px;
+    width: 350px;
+    background-color: blueviolet;
+  }
+  .infobox{
+    display: flex;
+    flex-direction: row;
+    background-color: aqua;
+    margin: 10px;
+  }
+  .au{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 20px;
+    background-color: antiquewhite;
+    flex: 1;
+  }
+  .channelicon{
+    flex: 1;
+  }
+  .name {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    align-items: center;
+    flex: 1;
+  }
+  .description {
+    flex:4;
+    font-size: 12px;
+  }
+  .date{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .views{
+    display: inline-block;
+  }
+
+
+
+  
