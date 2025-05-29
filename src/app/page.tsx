@@ -4,12 +4,9 @@ import Videos from './component/videos';
 
 export default function Home() {
   return (
-    <body className={styles.body}>
       <main>
         <Videos />
-        
-        
       </main>
-    </body>
+
   );
 }
