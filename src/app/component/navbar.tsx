@@ -1,6 +1,12 @@
+'use client'
+
 import styles from '../ui/nav.module.css';
 import ReorderIcon from '@mui/icons-material/Reorder';
+import { useSession, signIn, signOut } from 'next-auth/react';
+
 export default function Nav() {
+  const { data: session } = useSession();
+
   return (
     <>
         <nav className={styles.nav}>
@@ -17,14 +23,18 @@ export default function Nav() {
                 <li className={styles.ali}>Home</li>
                 <li className={styles.ali}>About</li>
                 <li className={styles.alia}>Contact</li>
+                {session ? (
+                  <li className={styles.ali}>
+                    <button onClick={() => signOut()}>Sign out</button>
+                  </li>
+                ) : (
+                  <li className={styles.ali}>
+                    <button onClick={() => signIn('google')}>Sign in</button>
+                  </li>
+                )}
               </ul>
             </div>
-
-          
         </nav>
-
-        </>
-    
-
+    </>
   );
 }
