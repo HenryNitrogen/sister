@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "./component/navbar";
 import { SessionProvider } from "./providers/SessionProvider";
 import styles from './ui/page.module.css';
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={styles.body}
+        className={`${styles.body} ${geistSans.variable} ${geistMono.variable}`}
       >
         <SessionProvider>
           <Nav />

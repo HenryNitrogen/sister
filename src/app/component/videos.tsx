@@ -1,6 +1,5 @@
 'use client'
 
-import { PrismaClient } from '@prisma/client';
 import { Avatar } from '@mui/material';
 import styles from '../ui/videos.module.css';
 import { useSession } from 'next-auth/react';

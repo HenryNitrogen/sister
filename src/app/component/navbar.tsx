@@ -3,6 +3,7 @@
 import styles from '../ui/nav.module.css';
 import ReorderIcon from '@mui/icons-material/Reorder';
 import { useSession, signIn, signOut } from 'next-auth/react';
+import Image from 'next/image';
 
 export default function Nav() {
   const { data: session } = useSession();
@@ -14,7 +15,7 @@ export default function Nav() {
             <button className={styles.iconbutton}><ReorderIcon /></button>
           </div>
           <div className={styles.logoContainer}>
-            <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+            <Image src="/logo.png" alt="Logo" className={styles.logoImage} width={140} height={48} />
           </div>
     
             <input className={styles.search} type="text" />
