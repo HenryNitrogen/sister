@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sistersmash",
   description: "sistersmash is a community-driven platform for sharing and discovering content related with smashing your sisters.",
+  icons: {
+    icon: '/logo1.png',
+  },
 };
 
 export default function RootLayout({
