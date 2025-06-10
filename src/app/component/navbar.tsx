@@ -2,12 +2,13 @@
 
 import styles from '../ui/nav.module.css';
 import ReorderIcon from '@mui/icons-material/Reorder';
-import { useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import { signIn, signOut } from 'next-auth/react';
+import { useSession } from "next-auth/react";
+
 
 export default function Nav() {
-  const { data: session } = useSession();
-
+  const { data: session, status } = useSession();
   return (
     <>
         <nav className={styles.nav}>
@@ -24,15 +25,8 @@ export default function Nav() {
                 <li className={styles.ali}>Home</li>
                 <li className={styles.ali}>About</li>
                 <li className={styles.alia}>Contact</li>
-                {session ? (
-                  <li className={styles.ali}>
-                    <button onClick={() => signOut()}>Sign out</button>
-                  </li>
-                ) : (
-                  <li className={styles.ali}>
-                    <button onClick={() => signIn('google')}>Sign in</button>
-                  </li>
-                )}
+                {status === "authenticated" ? (<li className={styles.ali}>{session.user?.name} <button onClick={()=> signOut() }>sign out</button></li> ) : (<button onClick={() => signIn("google")}>login</button>) }
+                
               </ul>
             </div>
         </nav>
