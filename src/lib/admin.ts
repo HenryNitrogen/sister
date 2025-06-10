@@ -1,7 +1,8 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/lib/auth";
+import type { Session } from "next-auth";
 
-export async function isAdmin() {
-  const session = await getServerSession(authOptions);
+export async function isAdmin(): Promise<boolean> {
+  const session: Session | null = await getServerSession(authOptions);
   return session?.user?.email === process.env.ADMIN_EMAIL;
 }
