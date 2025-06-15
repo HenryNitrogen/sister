@@ -3,7 +3,6 @@
 import { Avatar } from '@mui/material';
 import styles from '../ui/videos.module.css';
 import { useEffect, useState } from 'react';
-import getSession from '@/lib/session';
 
 interface Video {
   id: string;
@@ -14,9 +13,8 @@ interface Video {
   createdAt: Date;
 }
 
-export default function VideosPage() {
+export default function VideosPage({ isAuthenticated }: { isAuthenticated: boolean }) {
   const [videos, setVideos] = useState<Video[]>([]);
-  const [session, setSession] = useState<boolean>(false); // You can type this properly if you know the session shape
 
   useEffect(() => {
     // Fetch videos from API route
@@ -26,18 +24,7 @@ export default function VideosPage() {
       .catch((err) => console.error('Error fetching videos:', err));
   }, []);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const userSession = await getSession();
-        setSession(userSession);
-      } catch (err) {
-        console.error('Error fetching session:', err);
-      }
-    })();
-  }, []);
-
-  if (!session) {
+  if (!isAuthenticated) {
     return <div>Please login first</div>;
   }
 
