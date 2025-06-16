@@ -6,14 +6,17 @@ import Image from 'next/image';
 import { signIn, signOut } from 'next-auth/react';
 import { useSession } from "next-auth/react";
 
+interface NavProps {
+  onOpenSidebar: () => void;
+}
 
-export default function Nav() {
+export default function Nav({ onOpenSidebar }: NavProps) {
   const { data: session, status } = useSession();
   return (
     <>
         <nav className={styles.nav}>
           <div className={styles.list}> 
-            <button className={styles.iconbutton}><ReorderIcon /></button>
+            <button className={styles.iconbutton} onClick={onOpenSidebar}><ReorderIcon /></button>
           </div>
           <div className={styles.logoContainer}>
             <Image src="/logo.png" alt="Logo" className={styles.logoImage} width={140} height={48} />

@@ -61,7 +61,7 @@
     margin-left: 10px;
     margin-right: 10px;
   }
-  @media (max-width: 720px) {
+  @media (max-width: 876px) {
     .homelist {
       display: none;
     }
@@ -72,7 +72,7 @@
       display: none;
     }
   }
-  @media (min-width: 719px) {
+  @media (min-width: 875px) {
     .homelist {
       display: flex;
     }
