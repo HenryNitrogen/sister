@@ -1,5 +1,5 @@
 'use client'
-import { signIn,signOut,useSession } from 'next-auth/react';
+import {useSession } from 'next-auth/react';
 import { Avatar } from '@mui/material';
 import styles from '../ui/videos.module.css';
 import { useEffect, useState } from 'react';
@@ -16,7 +16,7 @@ interface Video {
 
 export default function VideosPage() {
   const [videos, setVideos] = useState<Video[]>([]);
-  const { data: session,status } = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     // Fetch videos from API route
