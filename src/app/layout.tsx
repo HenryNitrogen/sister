@@ -4,6 +4,7 @@ import "./globals.css";
 import styles from './ui/page.module.css';
 import ClientSessionProvider from "./component/ClientSessionProvider";
 import AppProvider from "./component/AppProvider";
+import { upload } from "@/lib/upload";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
