@@ -1,9 +1,10 @@
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient(); // ✅ 如果你已有 prisma.ts 封装，也可以 import 那个
+const prisma = new PrismaClient();
 
 import type { AdapterUser } from "next-auth/adapters";
+import type { User } from "next-auth";
 
-export async function upload(user: AdapterUser) {
+export async function upload(user: AdapterUser | User) {
   if (!user.email) {
     throw new Error("No email provided");
   }
