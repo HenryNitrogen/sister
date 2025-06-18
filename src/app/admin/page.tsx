@@ -1,7 +1,8 @@
 import {isAdmin} from "@/lib/admin";
 import prisma from "@/lib/prisma";
+import UploadPage from "./component/page";
 export default async function AdminPage() {
-    const ok = await isAdmin();
+    const ok =  await isAdmin();
     if (!ok) {
         return <div>Access Denied</div>;
     }
@@ -43,6 +44,8 @@ export default async function AdminPage() {
                      ))}
                 </table>
                 
+                     <UploadPage />
+
                 </>
            
         </div>
