@@ -13,8 +13,13 @@ const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async signIn({ user }) {
-            upload(user).catch(console.error).then(() => false); // 非阻塞调用，后台执行
-            return true;
+            try {
+                await upload(user);
+                return true; // Sign-in successful
+            }catch (error) {
+                console.error("Error during sign-in:", error);
+                return false; // Sign-in failed
+            }
           },
         async session({ session }) {
             return session;
