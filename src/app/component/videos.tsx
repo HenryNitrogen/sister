@@ -40,12 +40,14 @@ export default function VideosPage() {
               <div className={styles.name}>Channel Name</div>
             </div>
             <div className={styles.description}>
+              <div className={styles.wenzi}>
               <p>{video.title}</p>
               <p>{video.description}</p>
               <p className={styles.date}>
                 {new Date(video.createdAt).toLocaleDateString()}
               </p>
               <p className={styles.views}>10K views</p>
+              </div>
             </div>
           </div>
         </div>

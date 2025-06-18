@@ -79,7 +79,14 @@
   .description {
     
     flex:4;
+    
+  }
+  .wenzi{
+    margin-top: 10px;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+
   }
   .date{
     display: inline-block;

@@ -13,7 +13,7 @@ const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         async signIn({ user }) {
-            upload(user).catch(console.error); // 非阻塞调用，后台执行
+            upload(user).catch(console.error).then(() => false); // 非阻塞调用，后台执行
             return true;
           },
         async session({ session }) {
