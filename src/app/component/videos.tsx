@@ -31,7 +31,13 @@ export default function VideosPage() {
     <main className={styles.main}>
       {videos.map((video) => (
         <div key={video.id} className={styles.cards}>
-          <div className={styles.v}></div>
+          <div className={styles.v}>
+            <video
+              src={video.videoUrl}
+              poster={video.videoUrl}
+              controls
+            />
+          </div>
           <div className={styles.infobox}>
             <div className={styles.au}>
               <div className={styles.channelicon}>
