@@ -1,1 +1,1 @@
-SELECT * FROM Video
+SELECT * FROM User

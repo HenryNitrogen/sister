@@ -22,7 +22,7 @@ export async function POST(request: Request) {
         await prisma.video.create({
             data: {
                 id: rand,
-                title: title,
+                title: title+name,
                 description: description,
                 videoUrl : fileUrl,
                 thumbnailUrl: fileUrl,
