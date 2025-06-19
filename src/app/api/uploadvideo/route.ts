@@ -9,6 +9,8 @@ export async function POST(request: Request) {
     const name = session?.user?.name || "Anonymous";
     const data = await request.formData();
     const file = data.get('file')as unknown as File;
+    const title = data.get('title') as string;
+    const description = data.get('description') as string;
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const rand = randomUUID();
@@ -20,8 +22,8 @@ export async function POST(request: Request) {
         await prisma.video.create({
             data: {
                 id: rand,
-                title: name,
-                description: rand,
+                title: title,
+                description: description,
                 videoUrl : fileUrl,
                 thumbnailUrl: fileUrl,
             },
