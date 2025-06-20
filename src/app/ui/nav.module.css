@@ -7,10 +7,10 @@
     left: 20px;
     height: 60px;
     border-radius: 10px;
-    background-color: orange;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     align-items: center;
     z-index: 1000;
+    backdrop-filter: saturate(180%) blur(20px);
   }
   
   .logoContainer {
@@ -43,7 +43,8 @@
     padding-left: 10px;
     color: black;
     font-weight: 600;
-    background-color: red;
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     
   }
   .homelist{
