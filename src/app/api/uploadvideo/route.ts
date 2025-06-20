@@ -13,9 +13,16 @@ export async function POST(request: Request) {
         const file = data.get('file')as unknown as File;
         const title = data.get('title') as string;
         const description = data.get('description') as string;
+        const thumbnail = data.get('thumbnail') as File;
+        const thumbnailBytes = await thumbnail.arrayBuffer();
+        const a = Buffer.from(thumbnailBytes);
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
         const rand = randomUUID();
+        const thumbnailFilename = `${rand}-1${thumbnail.name}`;
+        const thumbnailFilepath = path.join(process.cwd(), "public/uploads/thumbnails", thumbnailFilename);
+        await writeFile(thumbnailFilepath, a);
+        const thumbnailUrl = `/uploads/thumbnails/${thumbnailFilename}`;
         const filename = `${rand}-${file.name}`;
         const filepath = path.join(process.cwd(), "public/uploads/videos", filename);
         await writeFile(filepath, buffer);
@@ -27,7 +34,7 @@ export async function POST(request: Request) {
                     title: title+name,
                     description: description,
                     videoUrl : fileUrl,
-                    thumbnailUrl: fileUrl,
+                    thumbnailUrl: thumbnailUrl,
                 },
             });
         }catch (error) {

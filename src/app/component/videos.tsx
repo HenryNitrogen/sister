@@ -34,7 +34,7 @@ export default function VideosPage() {
           <div className={styles.v}>
             <video
               src={video.videoUrl}
-              poster={video.videoUrl}
+              poster={video.thumbnailUrl}
               controls
             />
           </div>
