@@ -37,7 +37,7 @@ export default function VideosPage() {
               <video
                 src={video.videoUrl}
                 poster={video.thumbnailUrl}
-                controls={status === 'authenticated'}
+                controls
               />
             </div>
             {status !== 'authenticated' && (
